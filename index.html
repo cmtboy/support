@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-      var chatbox = document.getElementById(&#39;fb-customer-chat&#39;);
-      chatbox.setAttribute(&quot;page_id&quot;, &quot;103190782573315&quot;);
-      chatbox.setAttribute(&quot;attribution&quot;, &quot;biz_inbox&quot;);
+   
+    <title>Poly Hacks Support 1</title>
+</head>
+<body>
+<!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103190782573315");
+      chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
     <!-- Your SDK code -->
@@ -15,7 +26,7 @@
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,
-          version          : &#39;v15.0&#39;
+          version          : 'v15.0'
         });
       };
 
@@ -23,19 +34,10 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = &#39;https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js&#39;;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));
+      }(document, 'script', 'facebook-jssdk'));
     </script>
-    <title>Poly Hacks Support</title>
-</head>
-<body>
-    <!-- Messenger Chat Plugin Code -->
-    <div id='fb-root'/>
-
-    <!-- Your Chat Plugin code -->
-    <div class='fb-customerchat' id='fb-customer-chat'>
-    </div>
 
 
     
