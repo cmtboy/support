@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
    
     <title>Poly Hacks Support</title>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        
+        #loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #333;
+            border-top-color: #777;
+            border-radius: 50%;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loading animation -->
@@ -25,9 +59,10 @@
             s.async = true;
             s.src = 'https://call.chatra.io/chatra.js';
             s.onload = function() {
-                // Remove the loading animation
+                // Remove the loading animation and open the chat window
                 var loadingDiv = d.getElementById('loading');
                 loadingDiv.style.display = 'none';
+                w[c]('openChat', {});
             };
             if (d.head) d.head.appendChild(s);
         })(document, window, 'Chatra');
