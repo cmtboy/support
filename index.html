@@ -25,10 +25,9 @@
             s.async = true;
             s.src = 'https://call.chatra.io/chatra.js';
             s.onload = function() {
-                // Remove the loading animation and open the chat window
+                // Remove the loading animation
                 var loadingDiv = d.getElementById('loading');
                 loadingDiv.style.display = 'none';
-                w[c]('openChat', {});
             };
             if (d.head) d.head.appendChild(s);
         })(document, window, 'Chatra');
