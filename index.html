@@ -41,31 +41,41 @@
             }
         }
     </style>
+    
+    <!-- Chatra Script -->
+    <script>
+        function loadChatra() {
+            // Remove the loading animation
+            var loadingDiv = document.getElementById('loading');
+            loadingDiv.style.display = 'none';
+            
+            // Open the chat window
+            Chatra('openChat', {});
+        }
+        
+        // Check if Chatra is already loaded
+        if (typeof Chatra === 'undefined') {
+            (function(d, w, c) {
+                w.ChatraID = '5kAnFDs3XG3zh4T7t';
+                var s = d.createElement('script');
+                w[c] = w[c] || function() {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                s.onload = loadChatra; // Execute when Chatra script is loaded
+                if (d.head) d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        } else {
+            // Chatra is already loaded, execute immediately
+            loadChatra();
+        }
+    </script>
 </head>
 <body>
     <!-- Loading animation -->
     <div id="loading">
         <div class="loading-spinner"></div>
     </div>
-    
-    <!-- Chatra -->
-    <script>
-        (function(d, w, c) {
-            w.ChatraID = '5kAnFDs3XG3zh4T7t';
-            var s = d.createElement('script');
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            s.onload = function() {
-                // Remove the loading animation and open the chat window
-                var loadingDiv = d.getElementById('loading');
-                loadingDiv.style.display = 'none';
-                w[c]('openChat', {});
-            };
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
 </body>
 </html>
